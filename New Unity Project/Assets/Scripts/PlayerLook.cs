@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerLook : MonoBehaviour
 {
-    private float mouseSens = 100f;
+    [SerializeField] private float mouseSens = 100f;
     public Transform playerBody;
     private float xRotation = 0f;
     // Start is called before the first frame update
