@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Portal : MonoBehaviour
 {
+    public GameObject cube;
+    public GameObject player;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +23,8 @@ public class Portal : MonoBehaviour
         if (coll.gameObject.tag == "Player")
         {
             Debug.Log("collided !");
-            coll.gameObject.transform.position = GameObject.Find("Cube").transform.position;
+            player.transform.position = cube.transform.position;
+            Debug.Log(player.transform.position);
         }
     }
 }
