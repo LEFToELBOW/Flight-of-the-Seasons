@@ -8,6 +8,7 @@ public class Portal : MonoBehaviour
     public GameObject playerChild;
     public GameObject camera;
     public GameObject canvas;
+    public GameObject parentObj;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,8 +28,9 @@ public class Portal : MonoBehaviour
             Debug.Log("collided !");
             playerChild.transform.position = cube.transform.position;
             camera.transform.position = cube.transform.position;
+            // parentObj.transform.position = cube.transform.position;
             // canvas.transform.position = cube.transform.position;
-            Debug.Log(playerChild.transform.position);
+            Debug.Log(parentObj.transform.position);
         }
     }
 }
