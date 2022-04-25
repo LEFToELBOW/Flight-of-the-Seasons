@@ -5,8 +5,6 @@ using UnityEngine;
 public class Portal : MonoBehaviour
 {
     public GameObject cube;
-    public GameObject playerChild;
-    public GameObject camera;
     public GameObject canvas;
     public GameObject parentObj;
     // Start is called before the first frame update
@@ -26,10 +24,7 @@ public class Portal : MonoBehaviour
         if (coll.gameObject.tag == "Player")
         {
             Debug.Log("collided !");
-            playerChild.transform.position = cube.transform.position;
-            camera.transform.position = cube.transform.position;
-            // parentObj.transform.position = cube.transform.position;
-            // canvas.transform.position = cube.transform.position;
+            parentObj.transform.position = cube.transform.position;
             Debug.Log(parentObj.transform.position);
         }
     }

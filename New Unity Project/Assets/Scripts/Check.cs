@@ -23,23 +23,19 @@ public class Check : MonoBehaviour
             
             if (Vector3.Distance(key.transform.position, transform.position) <= Cdistance)
             {
-                Instantiate(close, canvas.transform);
-                Destroy(close, 1.0f);
+                Destroy(Instantiate(close, canvas.transform), 1.0f);
             }
             else if (Vector3.Distance(key.transform.position, transform.position) <= Mdistance)
             {
-                Instantiate(med, canvas.transform);
-                Destroy(med, 1.0f);
+                Destroy(Instantiate(med, canvas.transform), 1.0f);
             }
             else if (Vector3.Distance(key.transform.position, transform.position) <= Fdistance)
             {
-                Instantiate(far, canvas.transform);
-                Destroy(far, 1.0f);
+                Destroy(Instantiate(far, canvas.transform), 1.0f);
             }
             else
             {
-                Instantiate(blank, canvas.transform);
-                Destroy(blank, 1.0f);
+                Destroy(Instantiate(blank, canvas.transform), 1.0f);
             }
         }
         
