@@ -5,13 +5,20 @@ using UnityEngine;
 public class Portal : MonoBehaviour
 {
     public GameObject cube;
-    public GameObject canvas;
-    public GameObject parentObj;
-    public bool hasMoved;
+    public GameObject character;
+    private int count;
+    public GameObject position_one;
+    public GameObject position_two;
+    public GameObject move1, move2;
+    private GameObject[] positions;
     // Start is called before the first frame update
     void Start()
     {
-        
+        count = 1;
+        this.transform.position = position_one.transform.position;
+        positions = new GameObject[2];
+        positions[0] = position_one;
+        positions[1] = position_two;
     }
 
     // Update is called once per frame
@@ -25,11 +32,19 @@ public class Portal : MonoBehaviour
         if (coll.gameObject.tag == "Player")
         {
             Debug.Log("collided !");
-            parentObj.GetComponent<CharacterController>().enabled = false;
-            parentObj.transform.position = cube.transform.position;
-            parentObj.GetComponent<CharacterController>().enabled = true;
-            
-
+            character.GetComponent<CharacterController>().enabled = false;
+            character.transform.position = cube.transform.position;
+            character.GetComponent<CharacterController>().enabled = true;
+            this.transform.position = positions[count].transform.position;
+            CountUpdate();
         }
+    }
+
+    void CountUpdate()
+    {
+        if (count == 1)
+            count--;
+        else
+            count++;
     }
 }
