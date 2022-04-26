@@ -7,6 +7,7 @@ public class Portal : MonoBehaviour
     public GameObject cube;
     public GameObject canvas;
     public GameObject parentObj;
+    public bool hasMoved;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +28,8 @@ public class Portal : MonoBehaviour
             parentObj.GetComponent<CharacterController>().enabled = false;
             parentObj.transform.position = cube.transform.position;
             parentObj.GetComponent<CharacterController>().enabled = true;
-            Debug.Log(parentObj.transform.position);
+            
+
         }
     }
 }
