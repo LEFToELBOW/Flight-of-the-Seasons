@@ -24,7 +24,9 @@ public class Portal : MonoBehaviour
         if (coll.gameObject.tag == "Player")
         {
             Debug.Log("collided !");
+            parentObj.GetComponent<CharacterController>().enabled = false;
             parentObj.transform.position = cube.transform.position;
+            parentObj.GetComponent<CharacterController>().enabled = true;
             Debug.Log(parentObj.transform.position);
         }
     }
