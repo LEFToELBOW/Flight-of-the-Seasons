@@ -15,4 +15,9 @@ public class CollisionMove : MonoBehaviour
     {
         
     }
+
+    void OnTriggerEnter(Collider coll)
+    {
+
+    }
 }

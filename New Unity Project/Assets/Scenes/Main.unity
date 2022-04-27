@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311912, g: 0.3807398, b: 0.3587271, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -364,12 +364,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebfd4c87ff1f75742a5bcd132d4e615c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cube: {fileID: 0}
   character: {fileID: 0}
   position_one: {fileID: 0}
   position_two: {fileID: 0}
-  move1: {fileID: 0}
-  move2: {fileID: 0}
+  move: {fileID: 0}
 --- !u!1 &252519715
 GameObject:
   m_ObjectHideFlags: 0
@@ -545,7 +543,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 264460233}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 359, y: 137.8, z: -463}
+  m_LocalPosition: {x: 359, y: 141.73, z: -463}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1339,7 +1337,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1232391642814258466, guid: b4921b424117a2240a52780246ea82f3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1232391642814258466, guid: b4921b424117a2240a52780246ea82f3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1377,6 +1375,14 @@ PrefabInstance:
       propertyPath: cube
       value: 
       objectReference: {fileID: 519646789}
+    - target: {fileID: 1232391642814258470, guid: b4921b424117a2240a52780246ea82f3, type: 3}
+      propertyPath: move
+      value: 
+      objectReference: {fileID: 831081745}
+    - target: {fileID: 1232391642814258470, guid: b4921b424117a2240a52780246ea82f3, type: 3}
+      propertyPath: move1
+      value: 
+      objectReference: {fileID: 1028452152}
     - target: {fileID: 1232391642814258470, guid: b4921b424117a2240a52780246ea82f3, type: 3}
       propertyPath: character
       value: 
@@ -1597,7 +1603,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 807803377}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 272, y: 137.8, z: 320}
+  m_LocalPosition: {x: 272, y: 141.69, z: 320}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2293,7 +2299,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 922797180322983702, guid: bcd3b04ea17ee9841bb1e141d4c680f0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5
+      value: 138.6
       objectReference: {fileID: 0}
     - target: {fileID: 922797180322983702, guid: bcd3b04ea17ee9841bb1e141d4c680f0, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2331,6 +2337,10 @@ PrefabInstance:
       propertyPath: cube
       value: 
       objectReference: {fileID: 561582222}
+    - target: {fileID: 922797180322983706, guid: bcd3b04ea17ee9841bb1e141d4c680f0, type: 3}
+      propertyPath: move
+      value: 
+      objectReference: {fileID: 1028452152}
     - target: {fileID: 922797180322983706, guid: bcd3b04ea17ee9841bb1e141d4c680f0, type: 3}
       propertyPath: character
       value: 
@@ -3122,7 +3132,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1499155238}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -596, y: 137.8, z: 554}
+  m_LocalPosition: {x: -596, y: 140, z: 554}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3460,7 +3470,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1617084766}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -246, y: 137.8, z: -238}
+  m_LocalPosition: {x: -246, y: 141.65, z: -238}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

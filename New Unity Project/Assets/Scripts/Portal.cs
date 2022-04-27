@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class Portal : MonoBehaviour
 {
-    public GameObject cube;
     public GameObject character;
     private int count;
     public GameObject position_one;
     public GameObject position_two;
-    public GameObject move1, move2;
+    public GameObject move;
     private GameObject[] positions;
     // Start is called before the first frame update
     void Start()
@@ -33,7 +32,7 @@ public class Portal : MonoBehaviour
         {
             Debug.Log("collided !");
             character.GetComponent<CharacterController>().enabled = false;
-            character.transform.position = cube.transform.position;
+            character.transform.position = move.transform.position;
             character.GetComponent<CharacterController>().enabled = true;
             this.transform.position = positions[count].transform.position;
             CountUpdate();
