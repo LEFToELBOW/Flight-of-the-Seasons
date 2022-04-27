@@ -30,12 +30,26 @@ public class Portal : MonoBehaviour
     {
         if (coll.gameObject.tag == "Player")
         {
-            Debug.Log("collided !");
-            character.GetComponent<CharacterController>().enabled = false;
-            character.transform.position = move.transform.position;
-            character.GetComponent<CharacterController>().enabled = true;
-            this.transform.position = positions[count].transform.position;
-            CountUpdate();
+            if(this.tag == "Tomb")
+            {
+                if(Input.GetKeyDown("f"))
+                {
+                    character.GetComponent<CharacterController>().enabled = false;
+                    character.transform.position = move.transform.position;
+                    character.GetComponent<CharacterController>().enabled = true;
+                    this.transform.position = position_one.transform.position;
+                }
+            }
+            else
+            {
+                Debug.Log("collided !");
+                character.GetComponent<CharacterController>().enabled = false;
+                character.transform.position = move.transform.position;
+                character.GetComponent<CharacterController>().enabled = true;
+                this.transform.position = positions[count].transform.position;
+                CountUpdate();
+            }
+
         }
     }
 
