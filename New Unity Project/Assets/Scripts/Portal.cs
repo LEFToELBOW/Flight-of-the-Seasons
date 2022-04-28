@@ -10,9 +10,15 @@ public class Portal : MonoBehaviour
     public GameObject position_two;
     public GameObject move;
     private GameObject[] positions;
+    public GameObject key;
+    public GameObject keyWinter, keySummer, keySpring, keyFall;
     // Start is called before the first frame update
     void Start()
     {
+        if(this.tag == "Tomb")
+        {
+            return;
+        }
         count = 1;
         this.transform.position = position_one.transform.position;
         positions = new GameObject[2];
@@ -30,25 +36,33 @@ public class Portal : MonoBehaviour
     {
         if (coll.gameObject.tag == "Player")
         {
-            if(this.tag == "Tomb")
+            if(this.tag == "FallTomb")
             {
-                if(Input.GetKeyDown("f"))
-                {
-                    character.GetComponent<CharacterController>().enabled = false;
-                    character.transform.position = move.transform.position;
-                    character.GetComponent<CharacterController>().enabled = true;
-                    this.transform.position = position_one.transform.position;
-                }
+                key.transform.position = keyWinter.transform.position;
+                Debug.Log("SHJIIIIHOSHIH");
             }
-            else
+            else if (this.tag == "WinterTomb")
             {
+                key.transform.position = keySpring.transform.position;
+                Debug.Log("SHJIIIIHOSHIH");
+            }
+            else if(this.tag == "SpringTomb")
+            {
+                key.transform.position = keySummer.transform.position;
+                Debug.Log("SHJIIIIHOSHIH");
+            }
+            else if(this.tag == "SummerTomb")
+            {
+                key.transform.position = keyFall.transform.position;
+                Debug.Log("SHJIIIIHOSHIH");
+            }
                 Debug.Log("collided !");
                 character.GetComponent<CharacterController>().enabled = false;
                 character.transform.position = move.transform.position;
                 character.GetComponent<CharacterController>().enabled = true;
                 this.transform.position = positions[count].transform.position;
                 CountUpdate();
-            }
+
 
         }
     }
