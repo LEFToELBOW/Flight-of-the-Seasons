@@ -39,15 +39,14 @@ public class Timer : MonoBehaviour
     }
     void CheckEndGame()
     {
-        if(timerIsRunning)
+        
+        if(this.transform.position == endGame.transform.position)
         {
-            if(this.transform.position == endGame.transform.position)
-            {
-                timerIsRunning = false;
-                timeText.text = "";
+            timerIsRunning = false;
+            timeText.text = "";
 
-            }
         }
+
         
     }
     void DisplayTime(float timeToDisplay)
