@@ -18,6 +18,7 @@ public class Timer : MonoBehaviour
     {
         if (timerIsRunning)
         {
+            CheckEndGame();
             if (timeRemaining > 0)
             {
                 timeRemaining -= Time.deltaTime;
@@ -35,6 +36,19 @@ public class Timer : MonoBehaviour
                 info.text = "You have not collected all of the keys in time. The Earth will now have to rely on world governments to turn back climate change";
             }
         }
+    }
+    void CheckEndGame()
+    {
+        if(timerIsRunning)
+        {
+            if(this.transform.position == endGame.transform.position)
+            {
+                timerIsRunning = false;
+                timeText.text = "";
+
+            }
+        }
+        
     }
     void DisplayTime(float timeToDisplay)
     {
