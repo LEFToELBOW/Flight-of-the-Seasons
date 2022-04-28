@@ -14,6 +14,7 @@ public class Check : MonoBehaviour
     public GameObject endGame, startGame;
     public Text info;
     public Text timeText;
+    public Timer timer;
     // Start is called before the first frame update
     void Start()
     {
@@ -97,7 +98,9 @@ public class Check : MonoBehaviour
             this.transform.position = endGame.transform.position;
             this.GetComponent<CharacterController>().enabled = true;
             info.text = "Congratulations! You have collected all four keys, slowing down global climate change for now. Use this newly aquired time to help save the Earth before it is too late!";
+
             timeText.text = "";
+            timer.timerIsRunning = false;
         }
 
     }
