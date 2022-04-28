@@ -39,22 +39,22 @@ public class Portal : MonoBehaviour
             if(this.tag == "FallTomb")
             {
                 key.transform.position = keyWinter.transform.position;
-                Debug.Log("SHJIIIIHOSHIH");
+                
             }
             else if (this.tag == "WinterTomb")
             {
                 key.transform.position = keySpring.transform.position;
-                Debug.Log("SHJIIIIHOSHIH");
+               
             }
             else if(this.tag == "SpringTomb")
             {
                 key.transform.position = keySummer.transform.position;
-                Debug.Log("SHJIIIIHOSHIH");
+                
             }
             else if(this.tag == "SummerTomb")
             {
                 key.transform.position = keyFall.transform.position;
-                Debug.Log("SHJIIIIHOSHIH");
+                
             }
                 Debug.Log("collided !");
                 character.GetComponent<CharacterController>().enabled = false;

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Check : MonoBehaviour
-{ 
+{
     private float Fdistance = 700f;
     private float Mdistance = 350f;
     private float Cdistance = 200f;
@@ -13,13 +13,13 @@ public class Check : MonoBehaviour
     private GameObject keyW, keyS, keySu, keyF;    //0, 1, 2, 3 respectively
     public GameObject endGame, startGame;
     public Text info;
+    public Text timeText;
     // Start is called before the first frame update
     void Start()
     {
-        this.GetComponent<CharacterController>().enabled = false;
-        this.transform.position = startGame.transform.position;
-        this.GetComponent<CharacterController>().enabled = true;
 
+
+        StartCoroutine(WaitAndChange());
 
         keyW = GameObject.Find("KEYWINTERPOSITION");
         keyS = GameObject.Find("KEYSPRINGPOSITION");
@@ -29,7 +29,7 @@ public class Check : MonoBehaviour
 
         key = GameObject.Find("Key");
         winCon = new bool[4];
-        for(int i = 0; i < winCon.Length; i++)
+        for (int i = 0; i < winCon.Length; i++)
         {
             winCon[i] = false;
         }
@@ -40,17 +40,17 @@ public class Check : MonoBehaviour
     {
         if (Input.GetKeyDown("e"))
         {
-            
+
             if (Vector3.Distance(key.transform.position, transform.position) <= Cdistance)
             {
                 Destroy(Instantiate(close, canvas.transform), 1.0f);
-                if(key.transform.position == keyW.transform.position)
+                if (key.transform.position == keyW.transform.position)
                 {
                     Debug.Log("Collected");
                     winCon[0] = true;
                     CheckWin();
                 }
-                else if(key.transform.position == keyS.transform.position)
+                else if (key.transform.position == keyS.transform.position)
                 {
                     Debug.Log("Collected");
                     winCon[1] = true;
@@ -82,14 +82,14 @@ public class Check : MonoBehaviour
                 Destroy(Instantiate(blank, canvas.transform), 1.0f);
             }
         }
-        
+
     }
 
     public void CheckWin()
     {
-        for(int i = 0; i < winCon.Length; i++)
+        for (int i = 0; i < winCon.Length; i++)
         {
-            if(winCon[i] == false)
+            if (winCon[i] == false)
             {
                 return;
             }
@@ -97,7 +97,22 @@ public class Check : MonoBehaviour
             this.transform.position = endGame.transform.position;
             this.GetComponent<CharacterController>().enabled = true;
             info.text = "Congratulations! You have collected all four keys, slowing down global climate change for now. Use this newly aquired time to help save the Earth before it is too late!";
+            timeText.text = "";
         }
-          
+
     }
+
+    IEnumerator WaitAndChange()
+    {
+        this.GetComponent<CharacterController>().enabled = false;
+        this.transform.position = endGame.transform.position;
+        this.GetComponent<CharacterController>().enabled = true;
+
+        yield return new WaitForSeconds(20);
+
+        this.GetComponent<CharacterController>().enabled = false;
+        this.transform.position = startGame.transform.position;
+        this.GetComponent<CharacterController>().enabled = true;
+    }
+
 }

@@ -11,8 +11,8 @@ public class Timer : MonoBehaviour
     public GameObject endGame;
     private void Start()
     {
-        // Starts the timer automatically
-        timerIsRunning = true;
+        StartCoroutine(WaitAndChange());
+        
     }
     void Update()
     {
@@ -41,5 +41,15 @@ public class Timer : MonoBehaviour
         float minutes = Mathf.FloorToInt(timeToDisplay / 60);
         float seconds = Mathf.FloorToInt(timeToDisplay % 60);
         timeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+    }
+    IEnumerator WaitAndChange()
+    {
+        timeText.text = "";
+        info.text = "In this game, you must look around the different subworlds and look for the key to slow the effects of climate change. The keys are under the ground, and proximity is given through pressing E which will bring up a color based on how far you are from the key based on the darkness of the color, dark red means that you have found it and automatically collects the key for you. You must collect all of the keys under the time limit using the portals around you to move inside of the worlds faster. Good Luck";
+
+        yield return new WaitForSeconds(20);
+
+        info.text = "Time Remaining:";
+        timerIsRunning = true;
     }
 }
